@@ -11,7 +11,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
   const [status, setStatus] = useState('incomplete');
  const handleSubmit=(e)=>{
     e.preventDefault();
-  if(title===' '){
+  if(title&' '){
     toast.error('Please enter a title');
       return;
   }
@@ -20,11 +20,14 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
       id:uuid(),
       title,
       status,
-      
-      
-    }))
+      time: new Date().toLocaleString(),
+    })
+    );
+    toast.success('Task added successfully');
   }
- }
+    }
+  }
+
   return (
     <>
     {modalOpen &&(

@@ -18,10 +18,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
   if(title==='add'){
     dispatch(addTodo({
       id:uuid(),
-      title,
-      status,
-      
-      
+      t
     }))
   }
  }

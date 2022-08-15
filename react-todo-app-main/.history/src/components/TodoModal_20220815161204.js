@@ -4,7 +4,6 @@ import { MdOutlineClose } from 'react-icons/md';
 import Button from './Button';
 import { dispatch } from 'react-hot-toast/dist/core/store';
 import { useDispatch } from 'react-redux';
-import { addTodo } from '../slices/todoSlice';
 const TodoModal = ({modalOpen,setModalOpen}) => {
   const dispatch=useDispatch();
   const [title, setTitle] = useState('');
@@ -12,17 +11,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
  const handleSubmit=(e)=>{
     e.preventDefault();
   if(title===' '){
-    toast.error('Please enter a title');
-      return;
-  }
-  if(title==='add'){
-    dispatch(addTodo({
-      id:uuid(),
-      title,
-      status,
-      
-      
-    }))
+   
   }
  }
   return (

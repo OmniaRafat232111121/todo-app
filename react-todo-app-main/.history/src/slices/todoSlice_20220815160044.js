@@ -1,16 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-const getinitialTodo=()=>{
+const getinitaialTodo=()=>{
   const localTodoList=window.localStorage.getItem('todoList');
   if (localTodoList) {
     return JSON.parse(localTodoList);
   }
-  window.localStorage.setItem('todoList',JSON.stringify([]));
+  window.localStorage.setItem('todoList', []);
   return [];
 
 }
 const initaialValue={
-  todoList:getinitialTodo(),
+  todoList:getinitaialTodo(),
 }
 export const todoSLice=createSlice({
   name:'todo',
@@ -35,5 +34,5 @@ export const todoSLice=createSlice({
   }
 })
 
-export const { addTodo } = todoSLice.actions;
-export default todoSLice.reducer;
+export const { addTodo } = .actions;
+export default .reducer;

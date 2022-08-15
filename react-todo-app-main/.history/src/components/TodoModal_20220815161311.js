@@ -19,9 +19,6 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     dispatch(addTodo({
       id:uuid(),
       title,
-      status,
-      
-      
     }))
   }
  }

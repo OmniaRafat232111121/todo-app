@@ -20,8 +20,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
       id:uuid(),
       title,
       status,
-      
-      
+      time: new Date().toLocaleString(),
     }))
   }
  }

@@ -5,6 +5,7 @@ import Button from './Button';
 import { dispatch } from 'react-hot-toast/dist/core/store';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../slices/todoSlice';
+import { useReducedMotion } from 'framer-motion';
 const TodoModal = ({modalOpen,setModalOpen}) => {
   const dispatch=useDispatch();
   const [title, setTitle] = useState('');
@@ -17,11 +18,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
   }
   if(title==='add'){
     dispatch(addTodo({
-      id:uuid(),
-      title,
-      status,
-      
-      
+      id:useReducedMotion()
     }))
   }
  }

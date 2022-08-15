@@ -21,7 +21,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
       title,
       status,
       
-      
+
     }))
   }
  }

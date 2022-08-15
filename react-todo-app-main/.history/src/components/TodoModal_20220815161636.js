@@ -11,20 +11,20 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
   const [status, setStatus] = useState('incomplete');
  const handleSubmit=(e)=>{
     e.preventDefault();
-  if(title===' '){
-    toast.error('Please enter a title');
-      return;
-  }
-  if(title==='add'){
+  if(title&&status){
+
     dispatch(addTodo({
       id:uuid(),
       title,
       status,
-      
-      
-    }))
+      time: new Date().toLocaleString(),
+    })
+    );
+    toast.success('Task added successfully');
   }
- }
+    }
+  }
+
   return (
     <>
     {modalOpen &&(
