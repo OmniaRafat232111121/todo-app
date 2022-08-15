@@ -2,31 +2,29 @@ import React,{useState} from 'react'
 import styles from "../styles/modules/modal.module.scss"
 import { MdOutlineClose } from 'react-icons/md';
 import Button from './Button';
-import toast from 'react-hot-toast';
+import { dispatch } from 'react-hot-toast/dist/core/store';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../slices/todoSlice';
 const TodoModal = ({modalOpen,setModalOpen}) => {
   const dispatch=useDispatch();
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
-  const handleSubmit = (e) => {
+ const handleSubmit=(e)=>{
     e.preventDefault();
-    if (title === '') {
-      toast.error('Please enter a title');
+  if(title===' '){
+    toast.error('Please enter a title');
       return;
-    }
-    if (title && status) {
-      if (type === 'add') {
-        dispatch(
-          addTodo({
-            id: uuid(),
-            title,
-            status,
-            time: new Date().toLocaleString(),
-          })
-        );
-        toast.success('Task added successfully');
-      }
+  }
+  if(title==='add'){
+    dispatch(addTodo({
+      id:uuid(),
+      title,
+      status,
+      
+      
+    }))
+  }
+ }
   return (
     <>
     {modalOpen &&(
@@ -44,7 +42,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     </div>
     <form className={styles.form}
     onSubmit={(e)=>handleSubmit(e)}>
-    <h1 className={styles.formTitle}>ADD Task</h1>
+    <h1 classname={styles.formTitle}>ADD Task</h1>
     <label htmlFor="title">
     Title
     <input 

@@ -40,10 +40,24 @@ export const todoSlice = createSlice({
         );
       }
     },
-  
+    updateTodo: (state, action) => {
+      const todoList = window.localStorage.getItem('todoList');
+      if (todoList) {
+        const todoListArr = JSON.parse(todoList);
+        todoListArr.forEach((todo) => {
+          if (todo.id === action.payload.id) {
+            todo.status = action.payload.status;
+            todo.title = action.payload.title;
+          }
+        });
+        window.localStorage.setItem('todoList', JSON.stringify(todoListArr));
+        state.todoList = [...todoListArr];
+      }
+    },
    
   },
 });
 
-export const { addTodo} =todoSlice.actions;
+export const { addTodo, updateTodo, deleteTodo, updateFilterStatus } =
+  todoSlice.actions;
 export default todoSlice.reducer;
