@@ -9,10 +9,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     <div className={styles.wrapper}>
     <div className={styles.container}>
     <div className={styles.closeButton}
-    onClick={()=>setModalOpen(false)}
-    onKeyDown={()=>setModalOpen(false)}
-    tabIndex={0}
-    role="button"
+    o
     >
 
     <MdOutlineClose/>

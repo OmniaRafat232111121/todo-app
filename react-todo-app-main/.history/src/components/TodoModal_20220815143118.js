@@ -12,7 +12,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     onClick={()=>setModalOpen(false)}
     onKeyDown={()=>setModalOpen(false)}
     tabIndex={0}
-    role="button"
+    role="butto"
     >
 
     <MdOutlineClose/>

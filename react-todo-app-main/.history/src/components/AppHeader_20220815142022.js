@@ -5,7 +5,7 @@ import styles from '../styles/modules/app.module.scss';
 
 
 function AppHeader() {
-  const [modalOpen,setModalOpen]=useState(true);
+  const [modalOpen,setModalOpen]=useState(false);
   return (
     <div className={styles.appHeader}>
       <Button variant="primary">
@@ -19,7 +19,7 @@ function AppHeader() {
         <option value="incomplete">Incomplete</option>
         <option value="complete">Completed</option>
       </SelectButton>
-      <TodoModal  modalOpen={modalOpen} type="add"/>
+      <TodoModal  modalOpen={moda} type="add"/>
     </div>
   );
 }

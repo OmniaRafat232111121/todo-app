@@ -5,16 +5,9 @@ import Button from './Button';
 const TodoModal = ({modalOpen,setModalOpen}) => {
   return (
     <>
-    {modalOpen &&(
     <div className={styles.wrapper}>
     <div className={styles.container}>
-    <div className={styles.closeButton}
-    onClick={()=>setModalOpen(false)}
-    onKeyDown={()=>setModalOpen(false)}
-    tabIndex={0}
-    role="button"
-    >
-
+    <div className={styles.closeButton}>
     <MdOutlineClose/>
     
     </div>
@@ -44,8 +37,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
   
     </div>
     </div>
-    )}
-    </>
+      
   );
 }
 
