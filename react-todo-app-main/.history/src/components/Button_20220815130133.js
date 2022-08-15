@@ -21,16 +21,20 @@ function Button({ children, type, variant = 'primary', ...rest }) {
     </button>
   );
 }
-function SelectButton({ children, id, ...rest }) {
+function SelectButton({ children, id , ...rest }) {
   return (
     <select
       id={id}
-      className={getClasses([styles.button, styles.buttonSelect])}
+      className={getClasses([
+        styles.button,
+        styles.butto],
+      ])}
+     
       {...rest}
     >
       {children}
     </select>
   );
 }
-export { SelectButton };
+export default {SelectButton};
 export default Button;

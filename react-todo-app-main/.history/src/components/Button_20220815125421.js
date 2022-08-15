@@ -7,7 +7,7 @@ const buttonTypes = {
   secondary: 'secondary',
 };
 
-function Button({ children, type, variant = 'primary', ...rest }) {
+function Button({ children, type, variant = ''prima, ...rest }) {
   return (
     <button
       className={getClasses([
@@ -21,16 +21,5 @@ function Button({ children, type, variant = 'primary', ...rest }) {
     </button>
   );
 }
-function SelectButton({ children, id, ...rest }) {
-  return (
-    <select
-      id={id}
-      className={getClasses([styles.button, styles.buttonSelect])}
-      {...rest}
-    >
-      {children}
-    </select>
-  );
-}
-export { SelectButton };
+
 export default Button;

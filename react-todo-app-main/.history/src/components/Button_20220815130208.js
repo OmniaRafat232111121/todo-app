@@ -32,5 +32,3 @@ function SelectButton({ children, id, ...rest }) {
     </select>
   );
 }
-export { SelectButton };
-export default Button;

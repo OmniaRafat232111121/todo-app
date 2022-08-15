@@ -7,30 +7,18 @@ const buttonTypes = {
   secondary: 'secondary',
 };
 
-function Button({ children, type, variant = 'primary', ...rest }) {
+function Button({ children, type, variant }) {
   return (
     <button
       className={getClasses([
         styles.button,
         styles[`button--${buttonTypes[variant]}`],
       ])}
-      type={type === 'submit' ? 'submit' : 'button'}
-      {...rest}
+      type={type === 'submit'? ''}
     >
       {children}
     </button>
   );
 }
-function SelectButton({ children, id, ...rest }) {
-  return (
-    <select
-      id={id}
-      className={getClasses([styles.button, styles.buttonSelect])}
-      {...rest}
-    >
-      {children}
-    </select>
-  );
-}
-export { SelectButton };
+
 export default Button;
