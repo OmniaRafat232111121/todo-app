@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, {, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { MdOutlineClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
+
 import toast from 'react-hot-toast';
 import { addTodo} from '../slices/todoSlice';
 import styles from '../styles/modules/modal.module.scss';
@@ -34,18 +35,19 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
       setModalOpen(false);
     }
   };
-  console.log({title,status})
 
   return (
     <>
       {modalOpen && (
         <div
           className={styles.wrapper}
-          
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
           <div
             className={styles.container}
-            
+            variants={dropIn}
             
           >
             <div

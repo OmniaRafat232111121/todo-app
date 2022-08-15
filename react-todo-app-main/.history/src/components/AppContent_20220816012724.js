@@ -23,7 +23,7 @@ const child = {
 };
 
 function AppContent() {
-const todoList=useSelector((state)=>state.todo.todoList)
+conct todoList=useSelector((state)=>state.)
   const filterStatus = useSelector((state) => state.todo.filterStatus);
 
   const sortedTodoList = [...todoList];

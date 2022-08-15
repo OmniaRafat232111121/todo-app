@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { MdOutlineClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
+
 import toast from 'react-hot-toast';
 import { addTodo} from '../slices/todoSlice';
 import styles from '../styles/modules/modal.module.scss';
@@ -20,7 +21,7 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
       return;
     }
     if (title && status) {
-      if (type === 'add') {
+     
         dispatch(
           addTodo({
             id: uuid(),
@@ -31,10 +32,12 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
         );
         toast.success('Task added successfully');
       }
+      else{
+        toast.error('Task  successfully');
+      }
       setModalOpen(false);
     }
   };
-  console.log({title,status})
 
   return (
     <>

@@ -34,7 +34,7 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
       setModalOpen(false);
     }
   };
-  console.log({title,status})
+  console.log({title})
 
   return (
     <>

@@ -78,3 +78,5 @@ export const { addTodo, updateTodo, deleteTodo, updateFilterStatus } =
 export default todoSlice.reducer;
 
 
+export const { addTodo} =todoSlice.actions;
+export default todoSlice.reducer;
