@@ -5,10 +5,10 @@ import styles from '../styles/modules/app.module.scss';
 
 
 function AppHeader() {
-  const [modalOpen,setModalOpen]=useState(false);
+  const [modalOpen,setModalOpen]=useState(true);
   return (
     <div className={styles.appHeader}>
-      <Button variant="primary" onClick={()=>setModalOpen(true)}>
+      <Button variant="primary" onClic>
         Add Task
       </Button>
       <SelectButton 
@@ -19,7 +19,7 @@ function AppHeader() {
         <option value="incomplete">Incomplete</option>
         <option value="complete">Completed</option>
       </SelectButton>
-      <TodoModal type="add" modalOpen={modalOpen} setModalOpen={setModalOpen} />
+      <TodoModal  modalOpen={modalOpen} setModalOpen={setModalOpen} type="add"/>
     </div>
   );
 }

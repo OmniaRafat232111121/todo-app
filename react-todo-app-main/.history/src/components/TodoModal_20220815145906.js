@@ -8,7 +8,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
   const [status, setStatus] = useState('incomplete');
  const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log({title,status})
+console.log({title,status})
  }
   return (
     <>

@@ -6,10 +6,6 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
 
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
- const handleSubmit=(e)=>{
-    e.preventDefault();
-    console.log({title,status})
- }
   return (
     <>
     {modalOpen &&(
@@ -25,8 +21,7 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     <MdOutlineClose/>
     
     </div>
-    <form className={styles.form}
-    onSubmit={(e)=>handleSubmit(e)}>
+    <form className={styles.form}>
     <h1 classname={styles.formTitle}>ADD Task</h1>
     <label htmlFor="title">
     Title
@@ -39,9 +34,11 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     <label htmlFor="status">
     Status  
     <select id="status"
-    name="status"
-    value={status}
-   onChange={(e)=>setStatus(e.target.value)} >
+    
+    type="text"
+    id="title" 
+    value={title}
+   onChange={(e)=>setTitle(e.target.value)} >
     <option value="incomplete">Incomplete</option>
     <option value="complete">Completed</option>
     </select>

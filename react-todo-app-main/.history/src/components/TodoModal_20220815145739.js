@@ -6,10 +6,9 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
 
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('incomplete');
- const handleSubmit=(e)=>{
-    e.preventDefault();
-    console.log({title,status})
- }
+ const handleSubmit=(e)=>({
+  e.preventDefault()
+ })
   return (
     <>
     {modalOpen &&(

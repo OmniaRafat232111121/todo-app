@@ -3,13 +3,7 @@ import styles from "../styles/modules/modal.module.scss"
 import { MdOutlineClose } from 'react-icons/md';
 import Button from './Button';
 const TodoModal = ({modalOpen,setModalOpen}) => {
-
-  const [title, setTitle] = useState('');
-  const [status, setStatus] = useState('incomplete');
- const handleSubmit=(e)=>{
-    e.preventDefault();
-    console.log({title,status})
- }
+  const {title,setTitle}=useState('');
   return (
     <>
     {modalOpen &&(
@@ -25,23 +19,15 @@ const TodoModal = ({modalOpen,setModalOpen}) => {
     <MdOutlineClose/>
     
     </div>
-    <form className={styles.form}
-    onSubmit={(e)=>handleSubmit(e)}>
+    <form className={styles.form}>
     <h1 classname={styles.formTitle}>ADD Task</h1>
     <label htmlFor="title">
     Title
-    <input 
-    type="text"
-     id="title" 
-     value={title}
-    onChange={(e)=>setTitle(e.target.value)}/>
+    <input type="text" id="title" />
     </label>
     <label htmlFor="status">
     Status  
-    <select id="status"
-    name="status"
-    value={status}
-   onChange={(e)=>setStatus(e.target.value)} >
+    <select id="type" >
     <option value="incomplete">Incomplete</option>
     <option value="complete">Completed</option>
     </select>
