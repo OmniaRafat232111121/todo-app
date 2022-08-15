@@ -7,7 +7,7 @@ const buttonTypes = {
   secondary: 'secondary',
 };
 
-function Button({ children, variant = 'secondary' }) {
+function Button({ children, variant = 'primary' }) {
   return (
     <button
       className={getClasses([
